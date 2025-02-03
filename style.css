@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffe5e5;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  margin: 20px;
+}
+
+.container .tenor-gif-embed {
+  max-width: 200px;
+}
+
+.container .btn {
+  display: flex;
+  gap: 25px;
+}
+
+.tenor-gif-embed img {
+  width: 110%;
+  border-radius: 5%;
+  height: 100% ;
+}
+
+.btn a {
+  text-decoration: none;
+  color: #111;
+  background: #fff;
+  padding: 10px 25px;
+  border-radius: 8px;
+  box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
+}
+
+
+
+.boxcontainer {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.flower-heart {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  animation: beat 1.5s infinite;
+}
+
+.flower-heart::before,
+.flower-heart::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 130px;
+  background: #ff69b4;
+  border-radius: 80px 80px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.flower-heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+/* Animations */
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes rise {
+  from { transform: translateY(100vh) rotate(0deg); }
+  to { transform: translateY(-100vh) rotate(360deg); }
+}
+
+@keyframes pop {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.heart {
+  position: fixed;
+  font-size: 25px;
+  animation: rise 4s linear forwards;
+  bottom: -50px;
+  z-index: 1;
+}
+
+.flower-pop {
+  position: fixed;
+  font-size: 30px;
+  animation: pop 2s ease-out forwards;
+  z-index: 0;
+}
+
+button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 18px;
+  color: white;
+  background-color: #d32f2f;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  z-index: 2;
+}
+
+button:hover {
+  background-color: #b71c1c;
+  transform: scale(1.05);
+}
